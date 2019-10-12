@@ -2,12 +2,13 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <title>My Dashboard</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" href="res/images/favicon.ico">
     <link rel="stylesheet" href="res/css/styles.css">
     <link href="https://fonts.googleapis.com/css?family=Livvic&display=swap" rel="stylesheet">
-    <title>My Dashboard</title>
     <script src="res/js/script.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 </head>
 <body>
 <main>
@@ -17,7 +18,8 @@
     <section id="container">
         <section id="main">
             <div class="content">
-                <div id="profile-container" class="tab active">
+
+                <div  id="profile-container" class="tab active" >
                     <div id="profile">
                         <div class="avatar">
                             <img src="res/images/me.png" id="picture" alt="My picture">
@@ -35,6 +37,7 @@
                         <div class="clear-fix"></div>
                     </div>
                 </div>
+
                 <div id="courses-container" class="tab">
                     <h1 class="title">Courses</h1>
                     <table id="courses">
@@ -86,10 +89,11 @@
                         </span>
                     </div>
                 </div>
+
             </div>
             <div class="controls">
-                <button id="profile-button" class="pill active">Profile</button>
-                <button id="courses-button" class="pill">Courses</button>
+                <button type="button" id="profile-button" class="pill active">Profile</button>
+                <button type="button" id="courses-button" class="pill">Courses</button>
             </div>
         </section>
     </section>

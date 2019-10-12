@@ -1,3 +1,6 @@
 $( function() {
-    $( "#content" ).tabs();
-} );
+    $( "button" ).click( function() {
+        alert("Button pressed!")
+    } );
+});
+
