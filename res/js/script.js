@@ -62,7 +62,9 @@ $(document).ready(function() {
 
         //Make "+"  button clickable so that it shows/hides form to add new course.
         $("#add-course-button").click(function () {
-            $('#add-course').toggle()
+					$(':input','#add-course')
+						.val('');
+          $('#add-course').toggle()
 
         });
 		//When clicking on "Cancel" button, in the form,
