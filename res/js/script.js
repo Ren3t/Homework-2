@@ -36,6 +36,7 @@ $(document).ready(function() {
         //Make "+"  button clickable so that it shows/hides form to add new course.
         $("#add-course-button").click(function () {
             $('#add-course').toggle()
+
         });
 		//When clicking on "Cancel" button, in the form,
 		//entered information should disappear and form should be hidden.
@@ -44,6 +45,10 @@ $(document).ready(function() {
 				.val('');
 			$('#add-course').hide();
 		});
+		$('#save-course').click(function () {
+
+
+        })
     });
 });
 
