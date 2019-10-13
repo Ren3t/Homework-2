@@ -48,6 +48,7 @@ $(document).ready(function() {
 						var first = (i+1).toString();
 						$("#courses > tbody:last-child").append("<tr><td>"+first+"</td><td>"+courses[i].title+"</td><td>"+courses[i].semester+"</td><td>"+courses[i].grade+"</td></tr>");
 					}
+						$('#profile-container').removeClass("tab active").addClass("tab");
             $('#courses-container').removeClass("tab").addClass("active");
             $('#profile-button').removeClass("pill active").addClass("pill");
             $('#courses-button').addClass("pill active");
@@ -55,6 +56,7 @@ $(document).ready(function() {
         $("#courses-button").click(tableInit);
         //Profile
         $("#profile-button").click(function () {
+						$('#profile-container').removeClass("tab").addClass("tab active");
             $('#courses-container').removeClass("active").addClass("tab");
             $('#courses-button').removeClass("pill active").addClass("pill");
             $('#profile-button').addClass("pill active");
