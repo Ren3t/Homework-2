@@ -18,9 +18,9 @@ $(document).ready(function() {
 		courses2 = document.getElementsByClassName("courses");
         $("#courses-button").click(function() {
 			//Initialize courses table
-			for(var i = 0;i<courses2.length;i++){
-				courses2[i].className = courses2[i].className.replace("active", "");
-
+			for(var i = 0;i<courses.length;i++){
+				var first = (i+1).toString();
+				$("#courses > tbody:last-child").append("<tr><td>"+first+"</td><td>"+courses[i].title+"</td><td>"+courses[i].semester+"</td><td>"+courses[i].grade+"</td></tr>");
 			}
             $('#courses-container').removeClass("tab").addClass("active");
             $('#profile-button').removeClass("pill active").addClass("pill");
@@ -51,4 +51,3 @@ $(document).ready(function() {
         })
     });
 });
-
