@@ -1,17 +1,43 @@
 $(document).ready(function() {
-	var user = new User(
-	"John",
-	"Doe",
-	"11/10/1990",
-	"Software Engineering",
-	"2.75"
-	)
+	function calcGPA(){
+		var points = 0;
+		for(var i = 0;i<courses.length;i++){
+			if(courses[i].grade >90){
+				points += 4;
+			}
+			else if(courses[i].grade >80){
+				points += 3;
+			}
+			else if(courses[i].grade >70){
+				points += 2;
+			}
+			else if(courses[i].grade >60){
+				points += 1;
+			}
+			else if(courses[i].grade >50){
+				points += 0.5;
+			}
+			else{
+				points += 0;
+			}
+		}
+	var gpa = points/courses.length;
+	return gpa
+	}
 	var courses = [
 		new Course("Agile software development", "1", "82"),
 		new Course("System modeling", "1", "85"),
 		new Course("Object-oriented programming", "2", "99"),
 		new Course("Estonian language level A2", "2", "65"),
 	];
+	var user = new User(
+	"John",
+	"Doe",
+	"11/10/1990",
+	"Software Engineering",
+	calcGPA()
+	)
+	$("#gpa").append("<strong>"+user.gpa+"</strong>");
     $(function () {
         //Make "Profile " and "Courses" buttons clickable so that they show/hide corresponding containers.
         //Courses
@@ -49,6 +75,11 @@ $(document).ready(function() {
 		$('#save-course').click(function () {
 				courses.push(new Course($("#title").val(),$("#semester").val(),$("#grade").val()));
 				$("#courses-button").trigger("click");
+				$("#gpa>").remove();
+				user.gpa=calcGPA();
+				$("#gpa").append("<strong>"+user.gpa+"</strong>");
+				$('#add-course').toggle()
+
 
         })
     });
