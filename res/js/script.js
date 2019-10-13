@@ -13,7 +13,7 @@ $(document).ready(function() {
 		new Course("Estonian language level A2", "2", "65"),
 	];
     $(function () {
-        //Make "Profile " and "Courses" buttons clickable so that they show/hide corresponding containers
+        //Make "Profile " and "Courses" buttons clickable so that they show/hide corresponding containers.
         //Courses
 		courses2 = document.getElementsByClassName("courses");
         $("#courses-button").click(function() {
@@ -33,12 +33,17 @@ $(document).ready(function() {
             $('#profile-button').addClass("pill active");
         });
 
-        //Make "+"  button clickable so that it shows/hides form to add new course
+        //Make "+"  button clickable so that it shows/hides form to add new course.
         $("#add-course-button").click(function () {
             $('#add-course').toggle()
         });
-	
+		//When clicking on "Cancel" button, in the form,
+		//entered information should disappear and form should be hidden.
+		$('#cancel-course').click(function(){
+			$(':input','#add-course')
+				.val('');
+			$('#add-course').hide();
+		});
     });
-
-
 });
+
